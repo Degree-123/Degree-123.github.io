@@ -1,26 +1,224 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-date:   2017-03-23 01:30:13 +0800
+title:  "An Intro to Git and GitHub for Beginners!"
+date:   2019-12-25 01:30:13 +0800
 categories: Default
 tags: test Test
 comments: 1
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+八月，我们举行了 , 女性编码会议并主持了一次针对初学者使用 git 和 GitHub 的研讨会。 我首先浏览了 幻灯片展示 有关 git 的基础知识和背景，然后我们分成几个小组来运行我创建的教程，以模拟对大型协作项目的工作。活动结束后，我们得到反馈，这是一个有用的动手介绍。因此，如果您还对 git 感到新，请按照以下步骤操作，以便轻松更改代码库、打开拉取请求并将代码合并到 master 分支中。 任何一个重要的 git 和 GitHub 术语是粗体链接到官方 git 参考资料。
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+开始：安装git,创建一个github账户。您要做的前两件事是安装 git 并创建一个免费的 GitHub 帐户。 </p>
 
-Jekyll also offers powerful support for code snippets:
+按照此处的说明 这里安装 git（如果尚未安装）。 请注意，对于本教程，我们将仅在命令行上使用 git。虽然有一些很棒的 git GUI（图形用户界面），但我认为先使用 git 特定命令学习 git 更容易，然后在您更适应该命令后试用 git GUI。完成此操作后，请在此处创建 GitHub 帐户。 这里. (（帐户对公共仓库是免费的，但私人仓库需要付费。)
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+步骤一: 创建一个本地的 git 仓库当你使用 git 在本地计算机上创建新项目时，你需要创建一个新的 <strong>仓库 (或者经常repo', 短暂地)。
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+为了使用 git，我们将使用终端。如果您对终端和基本命令没有太多经验，请查看  该教程(尤其是"导航文件系统"和"移动"部分 )。首先，打开一个终端，然后移动到要使用   <code>cd</code> (改变目录) 命令。例如，如果您的桌面上有一个"项目"文件夹，则执行类似操作：  
+
+要初始化文件夹根目录中的 git 存储库，可以运行:   
+
+步骤二: 在仓库中添加一个新文件</h3>
+
+ 
+
+<p>继续并添加一个新文件到项目中，使用任何文本编辑器都可或运行<span style="font-family: &#39;courier new&#39;, courier;">点击</span> 命令。</p>
+
+ 
+
+<p>在包含git 仓库的文件夹中添加或修改文件之后，git会注意到仓库的更改。但是，除非您明确地要求git跟踪文件(也就是说，将其提交—我们接下来将更多地讨论提交)，否则git不会跟踪文件。
+
+创建新文件后，可以使用 <strong><code>git status</code></strong> 命令查看git中存在的文件。
+
+\>这基本上是说，“嘿，我们注意到您创建了一个名为mnelson的新文件。但是除非你用 '<code>git 添加' </code>命令不要对它进行任何更改。"</p>
+
+附加:登录环境、提交和您</h3>
+
+ 
+
+ 
+
+<p>当您第一次学习git时，最容易混淆的部分之一是登录环境的概念以及它与提交的关系。</p>
+
+<p>一个<strong>提交</strong>是您自上次提交以来更改的文件的记录。本质上，您可以修改您的仓库(例如，添加一个文件或修改一个文件)，然后告诉git将这些文件提交。</p>
+
+ 
+
+<p>提交是项目的重要构成部分，允许您在任何时候返回到项目的状态
+
+那么，如何告诉git将哪些文件放入提交呢?这就是 <strong>登录环境</strong>或者<strong>索引</strong> 进入。 如步骤二所示，当您对您的仓库进行更改时，git会注意到文件已经更改，但不会对其进行任何操作(比如在提交中添加它)。</p>
+
+ 
+
+<p>要将文件添加到提交中，首先需要将其添加到登录环境中。 为此，您可以使用<strong><span style="font-family: &#39;courier new&#39;, courier;">git commit 文件名</span></strong>命令(见步骤三)。</p>
+
+使用git 的添加命令将所需的所有文件添加到暂存环境后，您可以告诉git使用以下命令将它们打包到提交中 <strong><span style="font-family: &#39;courier new&#39;, courier;">git commit</span> </strong>命令。<strong></strong></p>
+
+ 
+
+<p>注意：暂存环境，也称为“暂存”，是新的首选术语，但是您也可以将其称为“索引”。</p>
+
+步骤三：将文件添加到暂存环境</h3>
+
+ 
+
+<p><span>使用以下命令将文件添加到暂存环境 <strong><span style="font-family: &#39;courier new&#39;, courier;">git add</span></strong> 命令。</span></p>
+
+ 
+
+<p><span>如果重新运行git status命令，则会看到git已将文件添加到登录环境中（请注意“提交更改”这一项）。
+
+重申一下，该文件<strong>还未</strong>添加到提交项，但即将被添加到。</p>
+
+ 
+
+<p></p>
+
+ 
+
+<h3>步骤四：创建提交 </h3>
+
+ 
+
+<p>创建您的第一次提交</p>
+
+ 
+
+<p>运行命令 <code>git commit -m "关于您提交的消息"
+
+最终提交的信息应该与所提交信息中包含的内容相关——也许是一个新特性，也许是一个问题修复，也许只是一个打字错误。不要放像“asdfadsf”或“foobar”这样的信息。这让其他看到你所提交信息的人很难过。非常非常难过。
+
+步骤五：新建分支</h3>
+
+ 
+
+<p>现在，您已经进行了一次新的提交，让我们尝试一些更高级的东西。</p>
+
+ 
+
+<p>假设您要制作一个新功能，但担心在开发功能时会对主项目进行更改。 这是 <strong><a href="https://git-scm.com/book/en/v1/Git-Branching-What-a-Branch-Is" target="_blank">git 分支</strong>进入的地方.</p>
+
+分支允许您在项目的“状态”之间来回移动。例如，如果要向网站添加新页面，则可以仅为该页面创建一个新分支，而不会影响项目的主要部分。 完成页面后，您可以合并从分支到主分支的更改。创建新分支时，<span>Git 会</span><span>跟踪您的分支“分支”的提交，因此它知道所有文件的历史记录。</span></p>
+
+ 
+
+ 
+
+<p>假设您在master分支上，并且想要创建一个新分支来开发您的网页。您将执行以下操作：运行<strong> <code>git checkout -b my branch name</code></strong>. 这个命令将自动创建一个新的分支，然后在它上面“检查”，这意味着git将把你从主分支移到那个分支。</p>
+
+ 
+
+ 
+
+运行上述命令后，您可以使用 <strong><code>git branch</code></strong>命令来确认您的分支已创建: </p>
+
+分支名称旁边带有星号则表示在给定时间指向的分支。</p>
+
+ 
+
+<p>现在，如果您切换回主分支并进行更多提交，则新的分支将不会出现任何更改，除非您将这些更改<strong>合并</ strong>到新的分支上。
+
+步骤六:在GitHub上创建一个新的存储库</h3>
+
+ 
+
+<p>如果你只想在本地跟踪你的代码，你不需要使用GitHub。但是如果你想和一个团队合作，你可以使用github来协作修改项目代码。</p>
+
+ 
+
+<p></p>
+
+ 
+
+<p>要在GitHub上创建一个新的库，登录并转到GitHub主页。你会看到一个绿色的“+ New repository”按钮:
+
+点击按钮后，GitHub会要求你命名你的回购并提供一个简短的描述:
+
+填写完信息后，按“创建存储库”按钮来创建新的回购。</p>
+
+ 
+
+<p>GitHub会询问你是想从头创建一个新的回购，还是想添加一个本地创建的回购。在本例中，由于我们已经在本地创建了一个新的库，我们希望将其推到GitHub上，因此遵循 <strong>'....或者从命令行推送现有的存储库'</strong>部分:
+
+(您将希望将第一个命令行中的URL更改为本节中列出的GitHub，因为您的GitHub用户名和仓库名称是不同的。)
+
+步骤七:将一个分支推到GitHub</h3>
+
+ 
+
+<p>现在,我们将 <strong>更新</strong>在分支中提交到新的GitHub 库。这样其他人就可以看到你所做的改变。如果它们得到存储库所有者的批准，则可以将更改合并到主分支中。</p>
+
+ 
+
+<p>要将更改推送到GitHub上的新分支，您需要运行<code><strong>git push origin yourbranchname</strong>.<span style="font-family: arial, helvetica, sans-serif;"></span></code>GitHub会在远程库中自动为你创建分支:</p>
+
+您可能想知道上面命令中的“origin”单词是什么意思。当您将远程存储库克隆到本地机器时，git将创建一个 <strong>别名</strong> 给你。几乎在所有情况下都调用这个别名"<strong>origin</strong>."它实际上是远程存储库URL的简写。因此，要将更改推送到远程存储库，可以使用以下命令:
+
+(如果这是您第一次在本地使用GitHub，它可能会提示您使用GitHub用户名和密码登录。)</p>
+
+ 
+
+<p>如果您刷新GitHub页面，您将看到一个说明，说明一个以您的名字命名的分支刚刚被推送到存储库中。你也可以点击“分支”链接来查看你的分支。
+
+现在单击上面屏幕截图中的绿色按钮。我们要做一个 <strong>更新请求</strong>!</p>
+
+ 
+
+<p></p>
+
+ 
+
+<h3><a id="user-content-step-7-creating-a-pull-request-pr" class="anchor" href="https://github.com/cubeton/git101/blob/master/TurtorialInfo/Tutorial.md#step-7-creating-a-pull-request-pr" aria-hidden="true"></a>步骤八：创建PR</h3>
+
+ 
+
+<p>PR是一种提醒存储库所有者要更改其代码的方式。 它允许他们检查代码，并确保代码看起来不错，然后再将更改放入master分支。</p>
+
+ 
+
+<p>这是提交PR页面之前的样子:
+
+您可能会在底部看到一个绿色的大按钮，上面显示“合并拉取请求”。 单击这意味着您将把更改合并到master分支中。</p>
+
+ 
+
+<p>请注意，此按钮并非总是绿色。 在某些情况下，它将是灰色的，这意味着您面临<strong>合并冲突。  </strong>. 这是当一个文件中的更改与另一个文件中的更改冲突并且git无法确定要使用哪个版本时。 您必须手动输入并告诉git使用哪个版本。
+
+有时，您将成为回购的共同所有者或唯一所有者，在这种情况下，您可能无需创建PR来合并您的更改。 但是，创建一个分支仍然是一个好主意，这样您可以保留更完整的更新历史记录，并确保在进行更改时始终创建一个新分支。
+
+步骤九：合并PR</h3>
+
+ 
+
+<p>继续并单击绿色的“合并拉取请求”按钮。 这会将您的更改合并到master分支中。
+
+完成后，建议您删除分支（太多分支会变得凌乱），因此也请点击灰色的“删除分支”按钮。</p>
+
+ 
+
+<p>您可以通过单击新存储库首页上的“提交”链接来仔细检查提交是否已合并。
+
+步骤十一: 享受你的git glory</h3>
+
+ 
+
+<p><span>您已经成功地创建了PR并将代码合并到主分支。恭喜你!如果您想更深入地研究一下，请查看  </span>this Git101 folder<span>文件夹中的文件，了解更多关于使用git和GitHub的技巧。 </span></p>
+
+ 
+
+<p>我还建议花一些时间与您的团队一起模拟一个较小的小组项目，就像我们在这里所做的那样。 让您的团队使用您的团队名称创建一个新文件夹，并向其中添加一些带有文本的文件。 然后，尝试将这些更改推送到此远程仓库中。 这样，您的团队就可以开始对最初没有创建的文件进行更改，并使用PR功能进行练习。 并且，使用GitHub上的git blame和git history工具熟悉跟踪文件中进行了哪些更改以及谁进行了这些更改。</p>
+
+ 
+
+<p><span>您使用git的次数越多，您将越感到舒适。 （反正我是无法抗拒。）
+
+ 
+
+
+
+
+
+
 
 [jekyll-docs]: https://jekyllrb.com/docs/home
 [jekyll-gh]:   https://github.com/jekyll/jekyll
